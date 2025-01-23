@@ -59,34 +59,30 @@ export default {
 
 <style scoped>
 .splash-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: white;
+  min-height: 100vh;
+  background: #fff;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  z-index: 9999;
-  overflow: hidden;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .splash-content {
-  max-width: 800px;
+  max-width: 1200px;
   width: 100%;
+  padding: 0 24px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 24px;
   box-sizing: border-box;
 }
 
 .logo {
   flex-shrink: 0;
   text-align: left;
-  margin-bottom: 32px;
+  margin-top: 0;
   width: 100%;
 }
 
@@ -99,37 +95,30 @@ export default {
 }
 
 .text-content {
+  text-align: left;
   margin-bottom: 24px;
 }
 
-h1 {
-  font-size: clamp(24px, 5vw, 32px);
+.text-content h1:first-child {
   color: #999;
-  margin: 0 0 8px 0;
-  font-weight: 500;
-  flex-shrink: 0;
-  text-align: left;
-  line-height: 1.3;
 }
 
-h2 {
-  font-size: clamp(20px, 4.5vw, 28px);
+.text-content h1 {
+  font-size: clamp(24px, 5vw, 32px);
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   color: #333;
-  margin: 0 0 4px 0;
-  font-weight: 500;
-  flex-shrink: 0;
-  text-align: left;
-  line-height: 1.3;
 }
 
 .description {
-  color: #999;
-  font-size: clamp(14px, 3.5vw, 18px);
+  font-size: clamp(16px, 3vw, 20px);
   line-height: 1.6;
-  margin: 16px 0 0 0;
-  max-width: 600px;
-  flex-shrink: 0;
-  text-align: left;
+  color: #999;
+  margin-bottom: 32px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 .fashion-showcase {
@@ -169,42 +158,50 @@ h2 {
 }
 
 @media (max-width: 768px) {
+  .splash-screen {
+    padding: 0;
+  }
+
   .splash-content {
-    padding: 20px;
+    padding: 0 16px;
   }
 
-  .logo img {
-    height: 80px;
-    width: 100%;
+  .logo {
+    margin-top: 0;
   }
 
-  .fashion-showcase {
-    gap: 10px;
-    margin: 20px 0;
+  .text-content h1 {
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: 700;
   }
-
+  
   .description {
-    margin: 12px 0 0 0;
+    font-size: clamp(14px, 2.5vw, 18px);
+    font-weight: 600;
   }
 }
 
 @media (max-width: 480px) {
+  .splash-screen {
+    padding: 0;
+  }
+
   .splash-content {
-    padding: 16px;
+    padding: 0 12px;
   }
 
-  .logo img {
-    height: 64px;
-    width: 100%;
+  .logo {
+    margin-top: 0;
   }
 
-  .fashion-showcase {
-    gap: 8px;
-    margin: 16px 0;
+  .text-content h1 {
+    font-size: clamp(18px, 3.5vw, 24px);
+    font-weight: 700;
   }
-
-  .enter-button {
-    padding: 14px 32px;
+  
+  .description {
+    font-size: clamp(14px, 2.5vw, 16px);
+    font-weight: 600;
   }
 }
 
